@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  backend:
+    image: backend-image:latest  # Replace with the actual backend image
+    build:
+      context: ./backend          # Adjust the context if necessary
+    ports:
+      - "5000:5000"               # Expose the backend service on port 5000
+    volumes:
+      - ./backend:/app            # Mount the backend directory
+  
+  admin:
+    image: admin-image:latest     # Replace with the actual admin image
+    build:
+      context: ./admin            # Adjust the context if necessary
+    ports:
+      - "3000:3000"               # Expose the admin service on port 3000
+    volumes:
+      - ./admin:/app              # Mount the admin directory
